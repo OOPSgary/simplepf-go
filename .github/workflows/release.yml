@@ -121,4 +121,4 @@ jobs:
     - name: Upload GitHub
       uses: softprops/action-gh-release@v2
       with:
-        files: *
+        files: build/*
