@@ -106,14 +106,14 @@ jobs:
       run: mv pf-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}${{ matrix.goamd64 }} pf-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}${{ matrix.goamd64 }}.exe
 
     - name: Upload a Non-Windows Build Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       if: ${{ env.GOOS != 'windows' }}
       with:
         name: pf-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}${{ matrix.goamd64 }}
         path: pf-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}${{ matrix.goamd64 }}
 
     - name: Upload a Windows Build Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v6
       if: ${{ env.GOOS == 'windows' }}
       with:
         name: pf-${{ matrix.goos }}-${{ matrix.goarch }}-${{ matrix.goarm }}${{ matrix.goamd64 }}.exe
